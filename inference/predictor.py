@@ -15,9 +15,8 @@ device = torch.device(
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 
-model = BertForSequenceClassification.from_pretrained(
-    MODEL_PATH
-)
+model = BertForSequenceClassification.from_pretrained(MODEL_PATH)
+
 
 model.to(device)
 model.eval()

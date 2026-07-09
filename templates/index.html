@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emotion Detection</title>
+</head>
+
+<body>
+
+    <h1>Emotion Detection using BERT</h1>
+
+    <form action="/predict" method="POST">
+
+        <textarea name="text" rows="6" cols="60" placeholder="Enter your text..."></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Predict Emotion
+        </button>
+
+    </form>
+
+    {% if emotion %}
+
+    <hr>
+
+    <h2>Prediction</h2>
+
+    <p><b>Text:</b> {{ text }}</p>
+
+    <p><b>Emotion:</b> {{ emotion }}</p>
+
+    {% endif %}
+
+</body>
+
+</html>
