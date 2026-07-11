@@ -175,6 +175,40 @@ This project demonstrates:
 
 ---
 
+## 📌 Project Status
+
+🟢 **Status:** Completed
+
+**Version:** 1.0.0
+
+This project has been successfully completed as an end-to-end **Natural Language Processing (NLP)** application using **BERT**, **PyTorch**, **Hugging Face Transformers**, and **Flask**.
+
+### ✅ Completed Features
+
+- Emotion Detection using BERT
+- Text Preprocessing Pipeline
+- Custom Dataset & DataLoader
+- BERT Model Training
+- Model Evaluation
+- Real-Time Emotion Prediction
+- Confidence Score Display
+- Flask-Based Web Application
+- Responsive User Interface
+- GitHub Documentation
+
+### 🚀 Future Enhancements
+
+- 🌙 Dark Mode
+- 📊 Emotion Probability Visualization
+- 📱 Responsive UI Improvements
+- 🐳 Docker Support
+- ☁️ Cloud Deployment
+- REST API Integration
+
+---
+
+---
+
 ## 👨‍💻 Authors
 
 ### Thiruveedula Naga Sandeep
