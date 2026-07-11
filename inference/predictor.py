@@ -1,6 +1,7 @@
 import os
 import torch
 from transformers import AutoTokenizer, BertForSequenceClassification
+import torch.nn.functional as F
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, "saved_model")
@@ -55,6 +56,9 @@ def predict_emotion(text):
             attention_mask=attention_mask
         )
 
-    prediction = torch.argmax(outputs.logits, dim=1).item()
+    probabilities = F.softmax(outputs.logits, dim=1)
 
-    return emotion_labels[prediction]
+    prediction = torch.argmax(probabilities, dim=1).item()
+
+    confidence = probabilities[0][prediction].item()
+    return emotion_labels[prediction], confidence

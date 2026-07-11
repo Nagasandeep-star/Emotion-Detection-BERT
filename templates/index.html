@@ -1,38 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Emotion Detection</title>
+    <meta charset="UTF-8">
+    <title>Emotion Detection using BERT</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+    <nav class="navbar">
+        <h2>Emotion Detection Using BERT</h2>
+    </nav>
 
-    <h1>Emotion Detection using BERT</h1>
+    <div class="container">
 
-    <form action="/predict" method="POST">
+        <div class="card">
 
-        <textarea name="text" rows="6" cols="60" placeholder="Enter your text..."></textarea>
+            <h1>😊 Emotion Detection using BERT</h1>
 
-        <br><br>
+            <form id="emotionForm" action="/predict" method="POST">
 
-        <button type="submit">
-            Predict Emotion
-        </button>
+                <textarea name="text" placeholder="Type your sentence here..."
+                    required>{{ text if text else "" }}</textarea>
 
-    </form>
+                <button id="predictButton" type="submit">
+                    Predict Emotion
+                </button>
 
-    {% if emotion %}
+            </form>
 
-    <hr>
+            {% if emotion %}
 
-    <h2>Prediction</h2>
+            <div class="result emotion-card">
 
-    <p><b>Text:</b> {{ text }}</p>
+                <h2>Prediction Result</h2>
 
-    <p><b>Emotion:</b> {{ emotion }}</p>
+                <h3>{{ emotion }}</h3>
 
-    {% endif %}
+                <p><strong>Confidence:</strong> {{ confidence }}%</p>
 
+                <p><strong>Your Text:</strong></p>
+
+                <p>{{ text }}</p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <footer class="footer">
+        <p>Developed by Thiruveedula Naga Sandeep</p>
+    </footer>
 </body>
 
 </html>
